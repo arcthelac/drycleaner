@@ -3,7 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PremiumClean - Professional Dry Cleaning Services</title>
+    <title>North Hill Cleaners - Professional Dry Cleaning Services in Calgary</title>
+    <meta name="description" content="Professional dry cleaning services in Calgary. Offering premium garment care, alterations, and express service. Located at 1645,1632 - 14th Avenue NW, Calgary.">
+    <meta name="keywords" content="dry cleaning, Calgary, garment care, alterations, express service, North Hill Cleaners">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="North Hill Cleaners - Professional Dry Cleaning Services">
+    <meta property="og:description" content="Premium dry cleaning services in Calgary. Expert garment care, alterations, and express service.">
+    <meta property="og:image" content="https://northhillcleaners.com/logo.png">
+    <meta property="og:url" content="https://northhillcleaners.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="North Hill Cleaners - Professional Dry Cleaning Services">
+    <meta name="twitter:description" content="Premium dry cleaning services in Calgary. Expert garment care, alterations, and express service.">
+    <meta name="twitter:image" content="https://northhillcleaners.com/logo.png">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "North Hill Cleaners",
+        "image": "https://northhillcleaners.com/logo.png",
+        "description": "Professional dry cleaning services in Calgary. Offering premium garment care, alterations, and express service.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1645,1632 - 14th Avenue NW",
+            "addressLocality": "Calgary",
+            "addressRegion": "AB",
+            "postalCode": "T2N 1M7",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.0447",
+            "longitude": "-114.0719"
+        },
+        "url": "https://northhillcleaners.com",
+        "telephone": "+1-567-888-888",
+        "email": "Northhillcleanersyyc@gmail.com",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:00",
+                "closes": "20:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "08:00",
+                "closes": "18:00"
+            }
+        ],
+        "priceRange": "$$"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -25,8 +93,9 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center">
+                    <img src="logo.png" alt="North Hill Cleaners Logo" class="h-12 w-auto mr-3">
                     <a href="/" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                        PremiumClean
+                        North Hill Cleaners
                     </a>
                 </div>
 
@@ -100,6 +169,23 @@
             </div>
         </div>
     </nav>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm">We use cookies to enhance your experience and track usage patterns to improve our service.</p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="acceptCookies()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                    Accept
+                </button>
+                <button onclick="declineCookies()" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition duration-300">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-gradient text-white py-20">
@@ -326,184 +412,85 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">Our Pricing</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Transparent pricing with no hidden fees. Choose the plan that works best for your needs.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Basic Plan -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 transition duration-300 card-hover">
-                    <h3 class="text-2xl font-bold mb-4">Basic Care</h3>
-                    <div class="text-4xl font-bold mb-6">$49<span class="text-lg text-gray-600 font-normal">/month</span></div>
-                    <p class="text-gray-600 mb-8">Perfect for individuals with regular dry cleaning needs.</p>
-                    <ul class="mb-8">
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>10 garments per month</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Standard 3-day service</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Free pickup and delivery</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Basic stain treatment</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block text-center px-6 py-3 bg-gray-100 text-gray-800 rounded-full font-medium hover:bg-gray-200 transition duration-300">
-                        Choose Plan
-                    </a>
-                </div>
-                
-                <!-- Premium Plan -->
-                <div class="bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-xl shadow-xl transform scale-105 text-white">
-                    <div class="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg text-gray-800">
-                        POPULAR
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Premium Care</h3>
-                    <div class="text-4xl font-bold mb-6">$89<span class="text-lg text-gray-100 font-normal">/month</span></div>
-                    <p class="text-gray-100 mb-8">Ideal for professionals who need regular quality care for their wardrobe.</p>
-                    <ul class="mb-8">
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>20 garments per month</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Express 24-hour service</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Priority pickup and delivery</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Advanced stain treatment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Minor repairs included</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block text-center px-6 py-3 bg-white text-blue-600 rounded-full font-medium hover:bg-gray-100 transition duration-300">
-                        Choose Plan
-                    </a>
-                </div>
-                
-                <!-- Family Plan -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 transition duration-300 card-hover">
-                    <h3 class="text-2xl font-bold mb-4">Family Plan</h3>
-                    <div class="text-4xl font-bold mb-6">$149<span class="text-lg text-gray-600 font-normal">/month</span></div>
-                    <p class="text-gray-600 mb-8">Comprehensive care for families with extensive dry cleaning needs.</p>
-                    <ul class="mb-8">
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>40 garments per month</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Mix of standard and express service</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Scheduled weekly pickup and delivery</span>
-                        </li>
-                        <li class="mb-3 flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Premium stain treatment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Alterations and repairs included</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block text-center px-6 py-3 bg-gray-100 text-gray-800 rounded-full font-medium hover:bg-gray-200 transition duration-300">
-                        Choose Plan
-                    </a>
-                </div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Transparent pricing with no hidden fees. Choose the service that works best for your needs.</p>
             </div>
             
             <!-- Individual Pricing -->
-            <div class="mt-20">
-                <h3 class="text-2xl font-bold mb-8 text-center">Individual Item Pricing</h3>
+            <div class="max-w-4xl mx-auto">
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <table class="w-full">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-4 text-left text-gray-700 font-bold">Item</th>
-                                <th class="px-6 py-4 text-left text-gray-700 font-bold">Standard Service</th>
-                                <th class="px-6 py-4 text-left text-gray-700 font-bold">Express Service</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 text-gray-700">Shirt/Blouse</td>
-                                <td class="px-6 py-4 text-gray-700">$5.99</td>
-                                <td class="px-6 py-4 text-gray-700">$8.99</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="px-6 py-4 text-gray-700">Pants/Trousers</td>
-                                <td class="px-6 py-4 text-gray-700">$7.99</td>
-                                <td class="px-6 py-4 text-gray-700">$11.99</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 text-gray-700">Suit (2-piece)</td>
-                                <td class="px-6 py-4 text-gray-700">$19.99</td>
-                                <td class="px-6 py-4 text-gray-700">$29.99</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="px-6 py-4 text-gray-700">Dress</td>
-                                <td class="px-6 py-4 text-gray-700">$14.99</td>
-                                <td class="px-6 py-4 text-gray-700">$22.99</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 text-gray-700">Coat/Jacket</td>
-                                <td class="px-6 py-4 text-gray-700">$16.99</td>
-                                <td class="px-6 py-4 text-gray-700">$24.99</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="px-6 py-4 text-gray-700">Sweater</td>
-                                <td class="px-6 py-4 text-gray-700">$8.99</td>
-                                <td class="px-6 py-4 text-gray-700">$13.99</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 text-gray-700">Bedding (Queen/King)</td>
-                                <td class="px-6 py-4 text-gray-700">$24.99</td>
-                                <td class="px-6 py-4 text-gray-700">$34.99</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
+                        <h3 class="text-2xl font-bold text-white">Individual Item Pricing</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Shirt/Blouse</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $5.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $8.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Pants/Trousers</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $7.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $11.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Suit (2-piece)</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $19.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $29.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Dress</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $14.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $22.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Coat/Jacket</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $16.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $24.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Sweater</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $8.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $13.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                                    <span class="text-gray-700 font-medium">Bedding (Queen/King)</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-600">Standard: $24.99</span>
+                                        <br>
+                                        <span class="text-blue-600">Express: $34.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <p class="text-gray-600 mb-4">* Express service delivers your items within 24 hours</p>
+                            <a href="#contact" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition duration-300 shadow-md">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -521,12 +508,12 @@
                 <form id="trackingForm" class="space-y-6">
                     <div>
                         <label for="orderNumber" class="block text-gray-700 font-medium mb-2">Order Number</label>
-                        <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., DRY-12345" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                        <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., DRY-12345" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
                     </div>
                     
                     <div>
                         <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Your email address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                        <input type="email" id="email" name="email" placeholder="Your email address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
                     </div>
                     
                     <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition duration-300 shadow-md">
@@ -574,6 +561,12 @@
                             <span class="text-gray-700">Delivery Method:</span>
                             <span id="deliveryMethod" class="font-medium">Home Delivery</span>
                         </div>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="mt-4 hidden">
+                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                        <p id="errorText"></p>
                     </div>
                 </div>
             </div>
@@ -662,7 +655,13 @@
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-1">Address</h4>
-                                    <p class="text-gray-600">123 Clean Street, Suite 100<br>Cityville, State 12345</p>
+                                    <p class="text-gray-600">1645,1632 - 14th Avenue NW<br>Calgary, AB T2N 1M7</p>
+                                    <a href="https://maps.app.goo.gl/X2D3GYFJKQofPqpa9" target="_blank" class="text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                        </svg>
+                                        Get Directions
+                                    </a>
                                 </div>
                             </div>
                             
@@ -674,7 +673,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-1">Phone</h4>
-                                    <p class="text-gray-600">(555) 123-4567</p>
+                                    <a href="tel:+1-567-888-888" class="text-gray-600 hover:text-blue-600 transition duration-300">+1-567-888-888</a>
                                 </div>
                             </div>
                             
@@ -686,7 +685,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-1">Email</h4>
-                                    <p class="text-gray-600">info@premiumdrycleaners.com</p>
+                                    <a href="mailto:Northhillcleanersyyc@gmail.com" class="text-gray-600 hover:text-blue-600 transition duration-300">Northhillcleanersyyc@gmail.com</a>
                                 </div>
                             </div>
                             
@@ -791,14 +790,159 @@
             menu.classList.toggle('hidden');
         }
         
+        // Cookie consent functionality
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.remove('hidden');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.add('hidden');
+            // Enable analytics and other cookie-dependent features
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.add('hidden');
+            // Disable analytics and other cookie-dependent features
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+
         // Order tracking form
-        document.getElementById('trackingForm').addEventListener('submit', function(e) {
+        document.getElementById('trackingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            document.getElementById('orderResult').classList.remove('hidden');
-            
-            // In a real implementation, this would fetch data from the Google Sheets API
-            // For this static demo, we're just showing the mock result
+            const orderNumber = document.getElementById('orderNumber').value;
+            const email = document.getElementById('email').value;
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+            try {
+                // Check authentication status
+                const isAuthenticated = await checkAuthStatus();
+                if (!isAuthenticated) {
+                    await handleAuth();
+                }
+
+                // In a real implementation, you would make an API call to your backend
+                // which would then use the Google Sheets API to fetch the order data
+                // For this demo, we'll simulate the API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show the result
+                document.getElementById('orderResult').classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+            } catch (error) {
+                console.error('Error tracking order:', error);
+                errorText.textContent = 'Failed to track order. Please try again later.';
+                errorMessage.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
         });
+
+        // Copy to clipboard functionality
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success message
+                const toast = document.createElement('div');
+                toast.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg';
+                toast.textContent = 'Copied to clipboard!';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // Initialize cookie consent check on page load
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+
+    <!-- Add Google API Client Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    
+    <!-- Add our JavaScript files -->
+    <script type="module" src="js/credentials.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module">
+        import { loadGoogleAPI, handleAuth, checkAuthStatus } from './js/auth.js';
+        import { testCredentials } from './js/credentials.js';
+
+        // Initialize Google API and test credentials
+        async function initializeAPI() {
+            try {
+                await loadGoogleAPI();
+                const credentialsTest = await testCredentials();
+                if (!credentialsTest) {
+                    console.error('Credential test failed');
+                }
+            } catch (error) {
+                console.error('Failed to initialize Google API:', error);
+            }
+        }
+
+        // Order tracking form handler
+        document.getElementById('trackingForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const orderNumber = document.getElementById('orderNumber').value;
+            const email = document.getElementById('email').value;
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+            try {
+                // Check authentication status
+                const isAuthenticated = await checkAuthStatus();
+                if (!isAuthenticated) {
+                    await handleAuth();
+                }
+
+                // In a real implementation, you would make an API call to your backend
+                // which would then use the Google Sheets API to fetch the order data
+                // For this demo, we'll simulate the API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show the result
+                document.getElementById('orderResult').classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+            } catch (error) {
+                console.error('Error tracking order:', error);
+                errorText.textContent = 'Failed to track order. Please try again later.';
+                errorMessage.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
+        });
+
+        // Initialize the API when the page loads
+        document.addEventListener('DOMContentLoaded', initializeAPI);
     </script>
 </body>
 </html>
