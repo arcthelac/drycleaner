@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Hill Cleaners - Professional Dry Cleaning Services in Calgary</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo.png">
+    
     <meta name="description" content="Professional dry cleaning services in Calgary. Offering premium garment care, alterations, and express service. Located at 1645,1632 - 14th Avenue NW, Calgary.">
     <meta name="keywords" content="dry cleaning, Calgary, garment care, alterations, express service, North Hill Cleaners">
     
@@ -48,14 +52,14 @@
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "07:00",
-                "closes": "20:00"
+                "opens": "9:30",
+                "closes": "18:00"
             },
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "Saturday",
-                "opens": "08:00",
-                "closes": "18:00"
+                "opens": "10:00",
+                "closes": "16:00"
             }
         ],
         "priceRange": "$$"
@@ -116,10 +120,10 @@
                     <a href="#order-tracking" class="text-gray-700 hover:text-blue-600 transition duration-300">
                         Track Order
                     </a>
-                    <a href="#terms" class="text-gray-700 hover:text-blue-600 transition duration-300">
+                    <a href="terms.html" class="text-gray-700 hover:text-blue-600 transition duration-300">
                         Terms
                     </a>
-                    <a href="#data-deletion" class="text-gray-700 hover:text-blue-600 transition duration-300">
+                    <a href="data-deletion.html" class="text-gray-700 hover:text-blue-600 transition duration-300">
                         Data Deletion
                     </a>
                     <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition duration-300 shadow-md">
@@ -157,7 +161,7 @@
                 <a href="#order-tracking" class="block text-gray-700 hover:text-blue-600 transition duration-300">
                     Track Order
                 </a>
-                <a href="#terms" class="block text-gray-700 hover:text-blue-600 transition duration-300">
+                <a href="terms.html" class="block text-gray-700 hover:text-blue-600 transition duration-300">
                     Terms
                 </a>
                 <a href="#data-deletion" class="block text-gray-700 hover:text-blue-600 transition duration-300">
@@ -204,7 +208,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1545018595-e31e1d07e16e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Dry Cleaning" class="rounded-lg shadow-xl">
+                    <img src="DryClean.png" alt="Dry Cleaning" class="rounded-lg shadow-xl">
                 </div>
             </div>
         </div>
@@ -370,15 +374,19 @@
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-md flex">
-                    <div class="mr-6">
+                <div class="bg-white p-8 rounded-xl shadow-md flex relative">
+                    <div class="absolute inset-0 bg-gray-100 opacity-75 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <span class="text-red-600 text-2xl font-bold transform -rotate-45">Coming Soon</span>
+                    </div>
+                    <div class="mr-6 relative z-0">
                         <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
                         </div>
                     </div>
-                    <div>
+                    <div class="relative z-0">
                         <h3 class="text-xl font-bold mb-3">Alterations & Repairs</h3>
                         <p class="text-gray-600 mb-4">Our skilled tailors can alter, repair, or restore your garments to ensure the perfect fit and extend their life.</p>
                         <ul class="text-gray-600">
@@ -501,19 +509,21 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">Track Your Order</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Enter your order details below to check the status of your cleaning.</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Enter your order number and phone number to check the status of your cleaning.</p>
             </div>
             
             <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8">
                 <form id="trackingForm" class="space-y-6">
                     <div>
                         <label for="orderNumber" class="block text-gray-700 font-medium mb-2">Order Number</label>
-                        <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., DRY-12345" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        <input type="text" id="orderNumber" name="orderNumber" placeholder="Enter your order number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        <p class="mt-1 text-sm text-gray-500">Format will be determined later</p>
                     </div>
                     
                     <div>
-                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Your email address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        <label for="phoneLast4" class="block text-gray-700 font-medium mb-2">Last 4 Digits of Phone Number</label>
+                        <input type="text" id="phoneLast4" name="phoneLast4" placeholder="XXXX" maxlength="4" pattern="[0-9]{4}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        <p class="mt-1 text-sm text-gray-500">Enter the last 4 digits of the phone number used when placing the order</p>
                     </div>
                     
                     <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition duration-300 shadow-md">
@@ -543,23 +553,23 @@
                     <div class="space-y-4">
                         <div class="flex justify-between">
                             <span class="text-gray-700">Order Number:</span>
-                            <span id="resultOrderNumber" class="font-medium">DRY-12345</span>
+                            <span id="resultOrderNumber" class="font-medium"></span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-700">Date Received:</span>
-                            <span id="dateReceived" class="font-medium">March 25, 2025</span>
+                            <span id="dateReceived" class="font-medium"></span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-700">Estimated Completion:</span>
-                            <span id="estimatedCompletion" class="font-medium">March 27, 2025</span>
+                            <span id="estimatedCompletion" class="font-medium"></span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-700">Items:</span>
-                            <span id="itemsList" class="font-medium">Suit (2-piece), Dress Shirt, Silk Blouse, Wool Sweater, Trousers</span>
+                            <span id="itemsList" class="font-medium"></span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-700">Delivery Method:</span>
-                            <span id="deliveryMethod" class="font-medium">Home Delivery</span>
+                            <span id="deliveryMethod" class="font-medium"></span>
                         </div>
                     </div>
                 </div>
@@ -578,7 +588,7 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <img src="https://images.unsplash.com/photo-1582646264575-c5ec4e0ba8d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Our Team" class="rounded-lg shadow-xl">
+                    <img src="Team.png" alt="Our Team" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2 md:pl-12">
                     <h2 class="text-3xl font-bold mb-6">About PremiumClean</h2>
@@ -722,7 +732,7 @@
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
                             </svg>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
@@ -763,11 +773,11 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#terms" class="text-gray-400 hover:text-white transition duration-300">Terms & Conditions</a></li>
-                        <li><a href="#data-deletion" class="text-gray-400 hover:text-white transition duration-300">Data Deletion</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition duration-300">Terms & Conditions</a></li>
+                        <li><a href="data-deletion.html" class="text-gray-400 hover:text-white transition duration-300">Data Deletion</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                        <li><a href="sitemap.html" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
@@ -775,13 +785,20 @@
             <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">© 2025 PremiumClean. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#terms" class="text-gray-400 hover:text-white transition duration-300">Terms</a>
-                    <a href="#data-deletion" class="text-gray-400 hover:text-white transition duration-300">Data Deletion</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-white transition duration-300">Terms</a>
+                    <a href="data-deletion.html" class="text-gray-400 hover:text-white transition duration-300">Data Deletion</a>
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-20 right-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-blue-700 hover:to-purple-700 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
     <script>
         // Mobile menu toggle
@@ -789,6 +806,24 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         }
+        
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
         
         // Cookie consent functionality
         function checkCookieConsent() {
@@ -824,11 +859,18 @@
         document.getElementById('trackingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const orderNumber = document.getElementById('orderNumber').value;
-            const email = document.getElementById('email').value;
+            const phoneLast4 = document.getElementById('phoneLast4').value;
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             const errorMessage = document.getElementById('errorMessage');
             const errorText = document.getElementById('errorText');
+
+            // Validate phone last 4
+            if (!/^\d{4}$/.test(phoneLast4)) {
+                errorText.textContent = 'Please enter a valid 4-digit phone number';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
 
             // Show loading state
             submitButton.disabled = true;
@@ -841,17 +883,47 @@
                     await handleAuth();
                 }
 
-                // In a real implementation, you would make an API call to your backend
-                // which would then use the Google Sheets API to fetch the order data
-                // For this demo, we'll simulate the API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Fetch order data from Google Sheets
+                const orderData = await fetchOrderData(orderNumber, phoneLast4);
+
+                // Update the UI with the order data
+                document.getElementById('resultOrderNumber').textContent = orderData.orderNumber;
+                document.getElementById('dateReceived').textContent = orderData.dateReceived;
+                document.getElementById('estimatedCompletion').textContent = orderData.estimatedCompletion;
+                document.getElementById('itemsList').textContent = orderData.items;
+                document.getElementById('deliveryMethod').textContent = orderData.deliveryMethod;
+                
+                // Update status and progress bar based on order status
+                const statusText = document.getElementById('statusText');
+                const progressBar = document.getElementById('progressBar');
+                switch(orderData.status.toLowerCase()) {
+                    case 'received':
+                        statusText.textContent = 'Order Received';
+                        progressBar.style.width = '25%';
+                        break;
+                    case 'processing':
+                        statusText.textContent = 'In Progress - Processing';
+                        progressBar.style.width = '50%';
+                        break;
+                    case 'quality check':
+                        statusText.textContent = 'In Progress - Quality Check';
+                        progressBar.style.width = '75%';
+                        break;
+                    case 'ready':
+                        statusText.textContent = 'Ready for Pickup/Delivery';
+                        progressBar.style.width = '100%';
+                        break;
+                    default:
+                        statusText.textContent = 'Status Unknown';
+                        progressBar.style.width = '0%';
+                }
 
                 // Show the result
                 document.getElementById('orderResult').classList.remove('hidden');
                 errorMessage.classList.add('hidden');
             } catch (error) {
                 console.error('Error tracking order:', error);
-                errorText.textContent = 'Failed to track order. Please try again later.';
+                errorText.textContent = error.message || 'Failed to track order. Please try again later.';
                 errorMessage.classList.remove('hidden');
             } finally {
                 // Reset button state
@@ -901,15 +973,60 @@
             }
         }
 
+        // Function to fetch order data from Google Sheets
+        async function fetchOrderData(orderNumber, phoneLast4) {
+            try {
+                const credentials = getDecodedCredentials();
+                const response = await gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: credentials.spreadsheetId,
+                    range: 'Orders!A:F', // Adjust range based on your sheet structure
+                });
+
+                const values = response.result.values;
+                if (!values || values.length === 0) {
+                    throw new Error('No data found');
+                }
+
+                // Find the order matching the order number and phone last 4
+                const order = values.find(row => 
+                    row[0] === orderNumber && // Order number in column A
+                    row[1].slice(-4) === phoneLast4 // Phone number last 4 in column B
+                );
+
+                if (!order) {
+                    throw new Error('Order not found');
+                }
+
+                return {
+                    orderNumber: order[0],
+                    dateReceived: order[2],
+                    estimatedCompletion: order[3],
+                    items: order[4],
+                    deliveryMethod: order[5],
+                    status: order[6] // Assuming status is in column G
+                };
+            } catch (error) {
+                console.error('Error fetching order data:', error);
+                throw error;
+            }
+        }
+
         // Order tracking form handler
         document.getElementById('trackingForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const orderNumber = document.getElementById('orderNumber').value;
-            const email = document.getElementById('email').value;
+            const phoneLast4 = document.getElementById('phoneLast4').value;
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             const errorMessage = document.getElementById('errorMessage');
             const errorText = document.getElementById('errorText');
+
+            // Validate phone last 4
+            if (!/^\d{4}$/.test(phoneLast4)) {
+                errorText.textContent = 'Please enter a valid 4-digit phone number';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
 
             // Show loading state
             submitButton.disabled = true;
@@ -922,17 +1039,47 @@
                     await handleAuth();
                 }
 
-                // In a real implementation, you would make an API call to your backend
-                // which would then use the Google Sheets API to fetch the order data
-                // For this demo, we'll simulate the API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Fetch order data from Google Sheets
+                const orderData = await fetchOrderData(orderNumber, phoneLast4);
+
+                // Update the UI with the order data
+                document.getElementById('resultOrderNumber').textContent = orderData.orderNumber;
+                document.getElementById('dateReceived').textContent = orderData.dateReceived;
+                document.getElementById('estimatedCompletion').textContent = orderData.estimatedCompletion;
+                document.getElementById('itemsList').textContent = orderData.items;
+                document.getElementById('deliveryMethod').textContent = orderData.deliveryMethod;
+                
+                // Update status and progress bar based on order status
+                const statusText = document.getElementById('statusText');
+                const progressBar = document.getElementById('progressBar');
+                switch(orderData.status.toLowerCase()) {
+                    case 'received':
+                        statusText.textContent = 'Order Received';
+                        progressBar.style.width = '25%';
+                        break;
+                    case 'processing':
+                        statusText.textContent = 'In Progress - Processing';
+                        progressBar.style.width = '50%';
+                        break;
+                    case 'quality check':
+                        statusText.textContent = 'In Progress - Quality Check';
+                        progressBar.style.width = '75%';
+                        break;
+                    case 'ready':
+                        statusText.textContent = 'Ready for Pickup/Delivery';
+                        progressBar.style.width = '100%';
+                        break;
+                    default:
+                        statusText.textContent = 'Status Unknown';
+                        progressBar.style.width = '0%';
+                }
 
                 // Show the result
                 document.getElementById('orderResult').classList.remove('hidden');
                 errorMessage.classList.add('hidden');
             } catch (error) {
                 console.error('Error tracking order:', error);
-                errorText.textContent = 'Failed to track order. Please try again later.';
+                errorText.textContent = error.message || 'Failed to track order. Please try again later.';
                 errorMessage.classList.remove('hidden');
             } finally {
                 // Reset button state
