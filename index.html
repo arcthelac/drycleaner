@@ -513,11 +513,10 @@
             </div>
             
             <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8">
-                <form id="trackingForm" class="space-y-6">
+                <form id="trackingForm" class="space-y-6" onsubmit="trackOrder(event)">
                     <div>
                         <label for="orderNumber" class="block text-gray-700 font-medium mb-2">Order Number</label>
                         <input type="text" id="orderNumber" name="orderNumber" placeholder="Enter your order number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
-                        <p class="mt-1 text-sm text-gray-500">Format will be determined later</p>
                     </div>
                     
                     <div>
@@ -547,29 +546,13 @@
                                 </div>
                             </div>
                         </div>
-                        <p id="statusText" class="mt-4 text-lg font-medium text-blue-600">In Progress - Quality Check</p>
+                        <p id="statusText" class="mt-4 text-lg font-medium text-blue-600"></p>
                     </div>
                     
                     <div class="space-y-4">
                         <div class="flex justify-between">
                             <span class="text-gray-700">Order Number:</span>
                             <span id="resultOrderNumber" class="font-medium"></span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Date Received:</span>
-                            <span id="dateReceived" class="font-medium"></span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Estimated Completion:</span>
-                            <span id="estimatedCompletion" class="font-medium"></span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Items:</span>
-                            <span id="itemsList" class="font-medium"></span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Delivery Method:</span>
-                            <span id="deliveryMethod" class="font-medium"></span>
                         </div>
                     </div>
                 </div>
@@ -855,83 +838,6 @@
             }
         }
 
-        // Order tracking form
-        document.getElementById('trackingForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const orderNumber = document.getElementById('orderNumber').value;
-            const phoneLast4 = document.getElementById('phoneLast4').value;
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            const errorMessage = document.getElementById('errorMessage');
-            const errorText = document.getElementById('errorText');
-
-            // Validate phone last 4
-            if (!/^\d{4}$/.test(phoneLast4)) {
-                errorText.textContent = 'Please enter a valid 4-digit phone number';
-                errorMessage.classList.remove('hidden');
-                return;
-            }
-
-            // Show loading state
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-
-            try {
-                // Check authentication status
-                const isAuthenticated = await checkAuthStatus();
-                if (!isAuthenticated) {
-                    await handleAuth();
-                }
-
-                // Fetch order data from Google Sheets
-                const orderData = await fetchOrderData(orderNumber, phoneLast4);
-
-                // Update the UI with the order data
-                document.getElementById('resultOrderNumber').textContent = orderData.orderNumber;
-                document.getElementById('dateReceived').textContent = orderData.dateReceived;
-                document.getElementById('estimatedCompletion').textContent = orderData.estimatedCompletion;
-                document.getElementById('itemsList').textContent = orderData.items;
-                document.getElementById('deliveryMethod').textContent = orderData.deliveryMethod;
-                
-                // Update status and progress bar based on order status
-                const statusText = document.getElementById('statusText');
-                const progressBar = document.getElementById('progressBar');
-                switch(orderData.status.toLowerCase()) {
-                    case 'received':
-                        statusText.textContent = 'Order Received';
-                        progressBar.style.width = '25%';
-                        break;
-                    case 'processing':
-                        statusText.textContent = 'In Progress - Processing';
-                        progressBar.style.width = '50%';
-                        break;
-                    case 'quality check':
-                        statusText.textContent = 'In Progress - Quality Check';
-                        progressBar.style.width = '75%';
-                        break;
-                    case 'ready':
-                        statusText.textContent = 'Ready for Pickup/Delivery';
-                        progressBar.style.width = '100%';
-                        break;
-                    default:
-                        statusText.textContent = 'Status Unknown';
-                        progressBar.style.width = '0%';
-                }
-
-                // Show the result
-                document.getElementById('orderResult').classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-            } catch (error) {
-                console.error('Error tracking order:', error);
-                errorText.textContent = error.message || 'Failed to track order. Please try again later.';
-                errorMessage.classList.remove('hidden');
-            } finally {
-                // Reset button state
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-            }
-        });
-
         // Copy to clipboard functionality
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
@@ -950,146 +856,10 @@
         document.addEventListener('DOMContentLoaded', checkCookieConsent);
     </script>
 
-    <!-- Add Google API Client Library -->
-    <script src="https://apis.google.com/js/api.js"></script>
-    
     <!-- Add our JavaScript files -->
-    <script type="module" src="js/credentials.js"></script>
-    <script type="module" src="js/auth.js"></script>
     <script type="module">
-        import { loadGoogleAPI, handleAuth, checkAuthStatus } from './js/auth.js';
-        import { testCredentials } from './js/credentials.js';
-
-        // Initialize Google API and test credentials
-        async function initializeAPI() {
-            try {
-                await loadGoogleAPI();
-                const credentialsTest = await testCredentials();
-                if (!credentialsTest) {
-                    console.error('Credential test failed');
-                }
-            } catch (error) {
-                console.error('Failed to initialize Google API:', error);
-            }
-        }
-
-        // Function to fetch order data from Google Sheets
-        async function fetchOrderData(orderNumber, phoneLast4) {
-            try {
-                const credentials = getDecodedCredentials();
-                const response = await gapi.client.sheets.spreadsheets.values.get({
-                    spreadsheetId: credentials.spreadsheetId,
-                    range: 'Orders!A:F', // Adjust range based on your sheet structure
-                });
-
-                const values = response.result.values;
-                if (!values || values.length === 0) {
-                    throw new Error('No data found');
-                }
-
-                // Find the order matching the order number and phone last 4
-                const order = values.find(row => 
-                    row[0] === orderNumber && // Order number in column A
-                    row[1].slice(-4) === phoneLast4 // Phone number last 4 in column B
-                );
-
-                if (!order) {
-                    throw new Error('Order not found');
-                }
-
-                return {
-                    orderNumber: order[0],
-                    dateReceived: order[2],
-                    estimatedCompletion: order[3],
-                    items: order[4],
-                    deliveryMethod: order[5],
-                    status: order[6] // Assuming status is in column G
-                };
-            } catch (error) {
-                console.error('Error fetching order data:', error);
-                throw error;
-            }
-        }
-
-        // Order tracking form handler
-        document.getElementById('trackingForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const orderNumber = document.getElementById('orderNumber').value;
-            const phoneLast4 = document.getElementById('phoneLast4').value;
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            const errorMessage = document.getElementById('errorMessage');
-            const errorText = document.getElementById('errorText');
-
-            // Validate phone last 4
-            if (!/^\d{4}$/.test(phoneLast4)) {
-                errorText.textContent = 'Please enter a valid 4-digit phone number';
-                errorMessage.classList.remove('hidden');
-                return;
-            }
-
-            // Show loading state
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-
-            try {
-                // Check authentication status
-                const isAuthenticated = await checkAuthStatus();
-                if (!isAuthenticated) {
-                    await handleAuth();
-                }
-
-                // Fetch order data from Google Sheets
-                const orderData = await fetchOrderData(orderNumber, phoneLast4);
-
-                // Update the UI with the order data
-                document.getElementById('resultOrderNumber').textContent = orderData.orderNumber;
-                document.getElementById('dateReceived').textContent = orderData.dateReceived;
-                document.getElementById('estimatedCompletion').textContent = orderData.estimatedCompletion;
-                document.getElementById('itemsList').textContent = orderData.items;
-                document.getElementById('deliveryMethod').textContent = orderData.deliveryMethod;
-                
-                // Update status and progress bar based on order status
-                const statusText = document.getElementById('statusText');
-                const progressBar = document.getElementById('progressBar');
-                switch(orderData.status.toLowerCase()) {
-                    case 'received':
-                        statusText.textContent = 'Order Received';
-                        progressBar.style.width = '25%';
-                        break;
-                    case 'processing':
-                        statusText.textContent = 'In Progress - Processing';
-                        progressBar.style.width = '50%';
-                        break;
-                    case 'quality check':
-                        statusText.textContent = 'In Progress - Quality Check';
-                        progressBar.style.width = '75%';
-                        break;
-                    case 'ready':
-                        statusText.textContent = 'Ready for Pickup/Delivery';
-                        progressBar.style.width = '100%';
-                        break;
-                    default:
-                        statusText.textContent = 'Status Unknown';
-                        progressBar.style.width = '0%';
-                }
-
-                // Show the result
-                document.getElementById('orderResult').classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-            } catch (error) {
-                console.error('Error tracking order:', error);
-                errorText.textContent = error.message || 'Failed to track order. Please try again later.';
-                errorMessage.classList.remove('hidden');
-            } finally {
-                // Reset button state
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-            }
-        });
-
-        // Initialize the API when the page loads
-        document.addEventListener('DOMContentLoaded', initializeAPI);
+        import { trackOrder } from './js/orderTracking.js';
+        window.trackOrder = trackOrder; // Make trackOrder available globally
     </script>
 </body>
 </html>
